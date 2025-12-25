@@ -1,441 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/favicon.png" type="image/png">
-    <title>MOHD AHMAD | Portfolio</title>
-    <link rel="stylesheet" href="./src/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta name="description" content="Mohd Ahmad – Web & Software Developer skilled in HTML, CSS, JavaScript, React, Shopify. Open for internships.">
-<meta name="keywords" content="Web Developer, Software Developer, React, Shopify, Portfolio">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOHD AHMAD | Portfolio</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-</head>
-<!-- Google tag (gtag.js) -->
+<link rel="icon" href="./img/favicon.png">
+<link rel="stylesheet" href="./src/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<meta name="description" content="Mohd Ahmad – Web & Software Developer Portfolio">
+<meta name="keywords" content="Web Developer, Software Developer, Portfolio">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2S3VSKFEP"></script>
- <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-G2S3VSKFEP');
-// </script> 
-<!-- <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
 <script>
-    // Initialize EmailJS
-    emailjs.init("syHh4gK4ogekzNyLD");      
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-G2S3VSKFEP');
+</script>
+</head>
 
-    // Function to get visitor details
-    const getVisitorDetails = async () => {
-        const deviceInfo = {
-            browser: navigator.userAgent,
-            platform: navigator.platform,
-            language: navigator.language,
-        };
+<body class="bg-[#151312] font-poppins text-white">
 
-        // Fetch location details from ipinfo.io
-        const locationInfo = await fetch("https://ipinfo.io/json?token=1d643b52a347ce")
-            .then((response) => response.json())
-            .catch(() => ({
-                city: "Unknown",
-                region: "Unknown",
-                country: "Unknown",
-                ip: "Unknown",
-            }));
+<header class="fixed top-0 w-full h-[100px] backdrop-blur-md flex justify-center pt-4 z-10">
+<div class="bg-[#1C1A19] flex gap-4 p-4 rounded-2xl">
+<img id="homeLink" src="./svg/home.svg" class="cursor-pointer">
+<img id="projectsLink" src="./svg/projects.svg" class="cursor-pointer">
+<img id="toolsLink" src="./svg/tools.svg" class="cursor-pointer">
+<img id="contactLink" src="./img/contact_2.png" class="w-[24px] invert cursor-pointer">
+</div>
+</header>
 
-        return { ...deviceInfo, ...locationInfo };
-    };
+<main class="mt-[120px] flex justify-center">
 
-    // Send Email with visitor details
-    getVisitorDetails().then((visitorInfo) => {
-        emailjs
-            .send("service_cp4veff", "template_ofavyyh", {
-                to_name: "Admin",
-                browser: visitorInfo.browser,
-                platform: visitorInfo.platform,
-                language: visitorInfo.language,
-                ip: visitorInfo.ip,
-                city: visitorInfo.city,
-                region: visitorInfo.region,
-                country: visitorInfo.country,
-            })
-            .then(
-                (response) => {
-                    console.log("Email sent successfully!", response);
-                },
-                (error) => {
-                    console.error("Failed to send email.", error);
-                }
-            );
-    });
+<div id="scrollContainer"
+class="max-w-[650px] w-full overflow-y-scroll h-[calc(100vh-140px)] px-4">
+
+<!-- HOME -->
+<section id="home">
+<h2 class="text-6xl font-bold">SOFTWARE <span class="text-[#353334]">DEVELOPER</span></h2>
+<p class="mt-6 text-sm">
+Aspiring Web & Software Developer focused on full-stack development.
+Actively seeking internship opportunities to gain real-world experience.
+</p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="mt-16">
+<h2 class="text-6xl font-bold">RECENT <span class="text-[#353334]">PROJECTS</span></h2>
+
+<div class="project-card mt-8">
+<h3>Login & Registration Website (PHP & MySQL)</h3>
+<p>
+Complete authentication system with secure login, registration,
+session handling and MySQL database connectivity.
+</p>
+
+<div class="flex gap-4 mt-3">
+<a href="https://ahmad26.page.gd" target="_blank" class="repo-btn">Live Website</a>
+<a href="https://github.com/4hmad26" target="_blank" class="repo-btn">View Code</a>
+</div>
+</div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" class="mt-16">
+<h2 class="text-6xl font-bold">TOOLS</h2>
+<p class="mt-4 text-sm">HTML, CSS, JavaScript, PHP, MySQL, Git, GitHub</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="mt-16 mb-16">
+<h2 class="text-6xl font-bold">GET IN <span class="text-[#353334]">TOUCH</span></h2>
+
+<form class="mt-6" action="https://formspree.io/f/xyzwqrzj" method="POST">
+<input class="w-full p-2 mb-3 bg-[#353334] rounded" placeholder="Name" name="name" required>
+<input class="w-full p-2 mb-3 bg-[#353334] rounded" placeholder="Email" type="email" name="email" required>
+<textarea class="w-full p-2 bg-[#353334] rounded" rows="4" placeholder="Message" name="message"></textarea>
+<button class="w-full bg-[#F46C38] py-2 mt-4 rounded font-bold">Submit</button>
+</form>
+</section>
+
+</div>
+</main>
+
+<script>
+document.getElementById("homeLink").onclick = ()=>scrollTo("home");
+document.getElementById("projectsLink").onclick = ()=>scrollTo("projects");
+document.getElementById("toolsLink").onclick = ()=>scrollTo("tools");
+document.getElementById("contactLink").onclick = ()=>scrollTo("contact");
+
+function scrollTo(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
 </script>
 
-
-<body class="bg-[#151312] font-poppins">
-    <header class="z-[1] fixed top-0 left-0 w-full h-[100px] backdrop-blur-md flex justify-center pt-4">
-        <div class="bg-[#1C1A19] flex justify-center items-center gap-3 p-4 w-fit mx-auto rounded-2xl h-fit">
-            <div class="relative p-2 group inline-block">
-                <img id="homeLink" class="cursor-pointer" src="./svg/home.svg" alt="Home">
-                <span
-                    class="font-poppins font-normal invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 ease-in-out bg-[#1C1A19] text-white text-xs rounded px-2 py-1 absolute -bottom-12 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-                    Home
-                </span>
-            </div>
-
-            <div class="relative p-2 group inline-block">
-                <img id="projectsLink" class="cursor-pointer" src="./svg/projects.svg" alt="projects">
-                <span
-                    class="font-poppins font-normal invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 ease-in-out bg-[#1C1A19] text-white text-xs rounded px-2 py-1 absolute -bottom-12 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-                    Projects
-                </span>
-            </div>
-
-            <!-- <div class="relative p-2 group inline-block">
-                <img id="experienceLink" class="cursor-pointer" src="./svg/experience.svg" alt="Experience">
-                <span
-                    class="font-poppins font-normal invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 ease-in-out bg-[#1C1A19] text-white text-xs rounded px-2 py-1 absolute -bottom-12 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-                    Experience
-                </span>
-            </div> -->
-
-            <div class="relative p-2 group inline-block">
-                <img id="toolsLink" class="cursor-pointer" src="./svg/tools.svg" alt="Tools">
-                <span
-                    class="font-poppins font-normal invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 ease-in-out bg-[#1C1A19] text-white text-xs rounded px-2 py-1 absolute -bottom-12 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-                    Tools
-                </span>
-            </div>
-
-            <div class="relative p-2 group inline-block">
-                <img id="contactLink" class="w-[24px] invert filter cursor-pointer" src="./img/contact_2.png"
-                    alt="Tools">
-                <span
-                    class="font-poppins font-normal invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 ease-in-out bg-[#1C1A19] text-white text-xs rounded px-2 py-1 absolute -bottom-12 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-                    Contact
-                </span>
-            </div>
-        </div>
-        <style>
-            * {
-                cursor: none;
-            }
-
-            .background {
-                width: 100vw;
-                height: 100vh;
-                pointer-events: none;
-                z-index: 99;
-                position: fixed;
-            }
-
-            .cursor {
-                width: 30px;
-                height: 30px;
-                border-radius: 45px;
-                border: 1px solid #D3D3D3;
-                z-index: 9999;
-                pointer-events: none;
-                transition: transform 0.1s ease-out, width 0.2s, height 0.2s;
-                margin-top: -95px;
-                margin-left: 10px;
-            }
-
-            .cursor-fixed {
-                margin-top: -95px;
-                margin-left: 10px;
-                pointer-events: none;
-                z-index: 300;
-                position: absolute;
-                width: 10px;
-                height: 10px;
-                border-radius: 45px;
-                background: #E4E4E4;
-            }
-
-            .nav-active {
-                border-radius: 10px;
-                background-color: #F46C38;
-                animation: bounce 0.5s ease-in-out;
-            }
-
-            @keyframes bounce {
-
-                0%,
-                100% {
-                    transform: translateY(0);
-                }
-
-                50% {
-                    transform: translateY(-10px);
-                }
-            }
-        </style>
-    </header>
-    <main
-        class="mt-[60px] flex justify-center items-start gap-8 h-screen pt-[40px] max-md:flex-col max-md:gap-12 max-md:h-fit">
-        <div class="background max-md:hidden">
-            <div class="cursor-fixed"></div>
-            <div class="cursor">
-                <div class="inside_cursor"></div>
-            </div>
-        </div>
-        <script>
-            const $cursor = document.querySelector('.cursor');
-            const $cursorPoint = document.querySelector('.cursor-fixed');
-
-            let cursorX = 0, cursorY = 0;
-            const mouse = { x: 0, y: 0 };
-
-            // Track mouse movement
-            document.addEventListener('mousemove', (event) => {
-                mouse.x = event.clientX;
-                mouse.y = event.clientY;
-            });
-
-            // Animation loop for smooth cursor movement
-            const loop = () => {
-                window.requestAnimationFrame(loop);
-
-                // Update cursor position, centering on the mouse
-                cursorX = mouse.x - $cursor.clientWidth / 2; // Center the cursor
-                cursorY = mouse.y - $cursor.clientHeight / 2; // Center the cursor
-
-                // Apply the new cursor position
-                $cursor.style.transform = `translateX(${cursorX}px) translateY(${cursorY}px)`;
-            }
-
-            // Start the animation loop
-            loop();
-
-            // Fixed dot that follows the mouse directly
-            document.addEventListener('mousemove', (event) => {
-                const mousePointX = event.clientX - $cursorPoint.clientWidth / 2; // Center the fixed dot
-                const mousePointY = event.clientY - $cursorPoint.clientHeight / 2; // Center the fixed dot
-                $cursorPoint.style.transform = `translateX(${mousePointX}px) translateY(${mousePointY}px)`;
-            });
-
-            // Scale cursor on mousedown
-            document.addEventListener('mousedown', () => {
-                $cursor.style.width = '50px';
-                $cursor.style.height = '50px';
-            });
-
-            // Reset cursor size on mouseup
-            document.addEventListener('mouseup', () => {
-                $cursor.style.width = '30px';
-                $cursor.style.height = '30px';
-            });
-        </script>
-        <div
-            class="sticky h-4/5 w-[400px] flex items-start justify-start ml-[-430px] max-lg:w-[300px] max-lg:ml-[-330px] max-md:unset-position max-md:w-[90%] max-md:my-0 max-md:mx-auto max-md:h-fit">
-            <div
-                class="overflow-hidden w-full rounded-xl bg-white h-fit p-4 flex justify-start items-center flex-col text-white text-center max-md:flex-row max-md:gap-4 max-sm:flex-col">
-               <!--<img class="h-auto w-full rounded-2xl mb-4 max-md:w-[300px] max-sm:w-full" src="image.png"    -->
-                    alt="MOHD AHMAD">
-                <div class="w-full h-fit flex justify-start items-center flex-col">
-                    <h1 class="text-4xl font-extrabold my-2 text-black">MOHD AHMAD</h1>
-                    <p class="text-sm text-black max-lg:text-xs">“An aspiring Web and Software Developer 
-                        actively seeking an internship opportunity to gain hands-on industry experience,
-                         apply technical skills to real-world projects,
-                          and grow within a professional development environment.”
-                    </p>
-                    <div class="flex gap-8 w-full justify-center items-center mt-6">
-                        <a href="mailto:ahmadghufran609@gmail.com">
-                            <img class="cursor-pointer opacity-30 w-[30px] h-auto aspect-square rounded-lg drop-shadow-xl"
-                                src="./img/gmail (1).png" alt="Gmail">
-                        </a>
-                        <a href="https://www.linkedin.com/in/mohd-ahmad-08952733b">
-                            <img class="cursor-pointer opacity-30 w-[30px] h-auto aspect-square rounded-lg drop-shadow-xl"
-                                src="./img/linkedin (1).png" alt="linkedin">
-                        </a>
-                        <a href="https://github.com/4hmad26">
-                            <img class="cursor-pointer opacity-30 w-[30px] h-auto aspect-square rounded-lg drop-shadow-xl"
-                                src="./img/github (1).png" alt="github">
-                        </a>
-                        <a href="https://www.instagram.com/4hmd_26?igsh=a3lqZzN1NnV6dHp6">
-                            <img class="cursor-pointer opacity-30 w-[30px] h-auto aspect-square rounded-lg drop-shadow-xl"
-                                src="./img/instagram (1).png" alt="instagram">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-       <div id="scrollContainer"
- class="absolute flex flex-col justify-start items-start 
- max-w-[600px] w-[65%] ml-[630px] overflow-y-scroll 
- bg-[#151312] text-white scrollbar-hide"
- style="height: calc(100vh - 120px);">
-
-
-            <section id="home" class="max-md:w-full">
-                <h2 class="text-7xl font-bold max-lg:text-5xl">SOFTWARE <span class="text-[#353334]">DEVELOPER</span>
-                </h2>
-                <p class="text-sm mt-8 max-lg:mt-4 max-lg:text-xs">As a Software Developer,
-                     I am currently learning and exploring full-stack development with a focus on web and mobile technologies such as React Native.
-                     I work on practice and personal projects to build responsive,
-                      user-friendly applications and strengthen my problem-solving skills.
-                       I am actively seeking an internship opportunity to gain hands-on experience,
-                        learn from industry professionals, and grow as a developer.</p>
-            </section>
-          
-  <!-- PROJECTS SECTION -->
-<!-- Project 3 -->
-<div class="project-card">
-  <h3>Login & Registration Website (PHP & MySQL)</h3>
-  <p>
-    Designed and developed a complete login & registration system with user authentication.
-    Includes secure form validation, session handling, and database connectivity.
-  </p>
-
-  <div style="display:flex; gap:12px; margin-top:10px;">
-    <a href="https://ahmad26.page.gd" target="_blank" class="repo-btn">
-      Live Website
-    </a>
-
-    <a href="https://github.com/4hmad26" target="_blank" class="repo-btn">
-      View Code
-    </a>
-  </div>
-</div>
-
-           
-            <section id="tools" class="mt-16 max-lg:mt-10 max-md:w-full">
-                <h2 class="text-7xl font-bold max-lg:text-5xl">PREMIUM <span class="text-[#353334]">TOOLS</span></h2>
-                <div class="flex flex-wrap mt-8 gap-y-4 gap-x-4 max-lg:mt-4">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/vscode.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/shopify.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/postman.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/git.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/github.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/html.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/css.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/bootstrap.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/tailwind.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/javascript.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/liquid.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/react.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/ps.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/ai.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/coreldraw.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/pp.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/ae.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/blender.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/c4d.png" alt="Visual Studio Code">
-                    <img class="h-auto w-[14%] bg-white p-4 rounded-lg max-lg:w-[20%] max-md:w-[16%] max-sm:w-[12%] max-md:p-2"
-                        src="./img/tools/arnold.png" alt="Visual Studio Code">
-                </div>
-            </section>
-          
-           <section id="contact" class="mt-16 max-lg:mt-10 max-md:w-full">
-                <h2 class="text-7xl font-bold max-lg:text-5xl">GET IN <span class="text-[#353334]">TOUCH</span></h2>
-                <form class="mt-8 max-lg:mt-4" action="https://formspree.io/f/xyzwqrzj" method="POST"> 
-                    <div class="flex justify-between">
-                        <div class="w-[48.5%]"> 
-                            <label for="name"
-                                class="block text-white text-sm font-normal mb-1  max-lg:text-xs text-left">Name</label>
-                            <input placeholder="Your Name" type="text" id="name" name="name" required
-                                class="w-full px-3 py-2 rounded-lg focus:outline-none bg-[#353334] placeholder:text-sm max-lg:placeholder:text-xs"
-                                style="cursor: text;">
-                        </div>
-                        <div class="w-[48.5%]">
-                            <label for="email"
-                                class="block text-white text-sm font-normal mb-1 max-lg:text-xs text-left">Email</label>
-                            <input placeholder="your@mail.com" type="email" id="email" name="email" required
-                                class="w-full px-3 py-2 rounded-lg focus:outline-none bg-[#353334] placeholder:text-sm max-lg:placeholder:text-xs"
-                                style="cursor: text;">
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <label for="message"
-                            class="block text-white text-sm font-normal mb-1 max-lg:text-xs text-left">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Type..."
-                            class="w-full px-3 py-2 rounded-lg focus:outline-none bg-[#353334] placeholder:text-sm max-lg:placeholder:text-xs"
-                            style="cursor: text;"></textarea>
-                    </div>
-                    <button type="submit"
-                        class="w-full bg-[#F46C38] text-white font-bold py-2 px-4 rounded-lg focus:outline-none mt-4 mb-16">
-                        Submit
-                    </button>
-                </form>
-            </section> 
-        </div>
-    </main>
-   <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const scrollContainer = document.getElementById("scrollContainer");
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (!section) return;
-
-    scrollContainer.scrollTo({
-      top: section.offsetTop - 40,
-      behavior: "smooth"
-    });
-  };
-
-  document.getElementById('homeLink')
-    .addEventListener('click', () => scrollToSection('home'));
-
-  document.getElementById('projectsLink')
-    .addEventListener('click', () => scrollToSection('projects'));
-
-  document.getElementById('toolsLink')
-    .addEventListener('click', () => scrollToSection('tools'));
-
-  document.getElementById('contactLink')
-    .addEventListener('click', () => scrollToSection('contact'));
-
-
-
-
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '-250px 0px 0px 0px',
-                threshold: 0
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const sectionId = entry.target.id;
-
-                    if (entry.isIntersecting) {
-                        Object.values(navLinks).forEach(link => link.classList.remove('nav-active'));
-                        navLinks[sectionId].classList.add('nav-active');
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => observer.observe(section));
-        });
-    </script>
 </body>
-
-
 </html>
