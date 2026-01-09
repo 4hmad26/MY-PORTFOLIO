@@ -66,7 +66,7 @@ A console-based backend-style application to manage library records.
 
 ---
 
-### 👤 User Management System (C)
+###  User Management System (C)
 
 A simple authentication-style program simulating user login and registration.
 
